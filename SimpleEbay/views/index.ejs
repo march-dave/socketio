@@ -2,10 +2,40 @@
 <html>
   <head>
     <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/semantic/dist/semantic.min.css">
+
+    <link rel='stylesheet' href='/css/style.css' />
+
+    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/bower_components/angular/angular.min.js"></script>
+    <script src="/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="/semantic/dist/semantic.min.js"></script>
+    <script src="/bower_components/stormpath-sdk-angularjs/dist/stormpath-sdk-angularjs.min.js"></script>
+    <script src="/bower_components/stormpath-sdk-angularjs/dist/stormpath-sdk-angularjs.tpls.min.js"></script>
+
+    <script src="/js/module.js"></script>
+    <script src="/js/controllers.js"></script>
+    <script src="/js/services.js"></script>
+
   </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+  </head>
+  <body ng-app='spApp'>
+    <div class='container'>
+
+    <a ui-sref='home'>Home</a>
+
+    <a if-not-user ui-sref='login'>Login</a>
+    <a if-not-user ui-sref='register'>Register</a>
+
+    <a if-user ui-sref='profile' sp-logout>Profile</a>
+    <a if-user ui-sref='logout' sp-logout>Logout</a>
+
+    <!-- <a if-user ui-sref='quotes' sp-logout>My Quotes</a> -->
+    <a if-not-user ui-sref='quotes'>My Quotes</a>
+
+    <ui-view></ui-view>
+
+    </div>
   </body>
 </html>
