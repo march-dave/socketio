@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SOCKET-RPS</title>
+  <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/bower_components/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="/bower_components/socket.io-client/socket.io.js"></script>
+  <script src="/js/main.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>SOCKET-RPS</h1>
+    <h3 id='status'>You are not in the game.</h3>
+
+    <div id="rpsButtons">
+      <button class="btn btn-lg btn-default rpsButton" data-rps='rock'>
+        <i class="fa fa-hand-rock-o" aria-hidden="true" data-rps='rock'></i>
+      </button>
+      <button class="btn btn-lg btn-default rpsButton" data-rps='paper'>
+        <i class="fa fa-hand-paper-o" aria-hidden="true" data-rps='paper'></i>
+      </button>
+      <button class="btn btn-lg btn-default rpsButton" data-rps='scissors'>
+        <i class="fa fa-hand-scissors-o" aria-hidden="true" data-rps='scissors'></i>
+      </button>      
+    </div>
+    
+  </div>
+  
+</body>
+</html>
